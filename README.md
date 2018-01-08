@@ -238,3 +238,4 @@ logstash::plugin { 'logstash-filter-custom':
 
 ## Support
 Need help? Join us in [#logstash](https://webchat.freenode.net?channels=%23logstash) on Freenode IRC or on the https://discuss.elastic.co/c/logstash discussion forum.
+
