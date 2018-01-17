@@ -86,7 +86,7 @@ define logstash::plugin (
     }
 
     default: {
-      fail "'ensure' should be 'present', 'absent', or a version like '1.3.4'."
+      fail("'ensure' should be 'present', 'absent', or a version like '1.3.4'.")
     }
   }
 
