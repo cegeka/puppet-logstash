@@ -6,7 +6,7 @@ describe 'logstash' do
       pp = <<-EOS
         include yum
         include stdlib
-        include stdlib::stages
+        include cegeka_stdlib::stages
         include profile::package_management
 
         class { 'cegekarepos' : stage => 'setup_repo' }
