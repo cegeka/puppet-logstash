@@ -11,11 +11,11 @@ describe 'logstash' do
 
         class { 'cegekarepos' : stage => 'setup_repo' }
 
-        Yum::Repo <| title == 'cegeka-unsigned' |>
-        Yum::Repo <| title == 'cegeka-unsigned-i386' |>
-        Yum::Repo <| title == 'cegeka-custom' |>
-        Yum::Repo <| title == 'cegeka-custom-noarch' |>
-        Yum::Repo <| title == 'logstash-1_4' |>
+        Cegeka_yum::Repo <| title == 'cegeka-unsigned' |>
+        Cegeka_yum::Repo <| title == 'cegeka-unsigned-i386' |>
+        Cegeka_yum::Repo <| title == 'cegeka-custom' |>
+        Cegeka_yum::Repo <| title == 'cegeka-custom-noarch' |>
+        Cegeka_yum::Repo <| title == 'logstash-1_4' |>
 
         class { 'logstash':
           version            => '1.4.2-1_2c0f5a1',
