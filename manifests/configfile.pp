@@ -35,6 +35,7 @@ define logstash::configfile(
   $content = undef,
   $source = undef,
   $template = undef,
+  $secret = undef,
 )
 {
   include logstash
@@ -45,6 +46,10 @@ define logstash::configfile(
   $mode ='0440'
   $require = Package['logstash'] # So that we have '/etc/logstash/conf.d'.
   $tag = [ 'logstash_config' ] # So that we notify the service.
+
+  if $secret {
+    $secretsql = getsecret($secret,'Password')
+  }
 
   if($template)   { $config = template($template) }
   elsif($content) { $config = $content }
